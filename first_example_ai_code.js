@@ -83,15 +83,15 @@
         STORAGE_PREFIX_TAB_COUNTER: 'counter_',
         SESSION_STORAGE_TAB_INSTANCE_ID_KEY: 'tabInstanceId', 
 
-        SYNC_INTERVAL_MS: 2500,
-        SYNC_JITTER_MS: 500,
+        SYNC_INTERVAL_MS: 25000,
+        SYNC_JITTER_MS: 5000,
         AUTO_RESET_MAX_AGE_HOURS: 14,
 
         AUTO_TRIGGER_REGEX: /Przypisz (nowy|ponownie)/i, 
         TRIGGER_OBSERVE_AREA_SELECTOR: 'body',
         DEFAULT_TRIGGER_MUTATION_DEBOUNCE_MS: 100, 
         MIN_TRIGGER_DEBOUNCE_MS: 50, 
-        MAX_TRIGGER_DEBOUNCE_MS: 3000,
+        MAX_TRIGGER_DEBOUNCE_MS: 200,
 
         AVAILABLE_SHORTCUT_KEYS: [
             { code: 'None', name_key: 'key_None' },
@@ -102,7 +102,7 @@
             { code: 'NumpadSubtract', name_key: 'key_NumpadSubtract' }, { code: 'NumpadAdd', name_key: 'key_NumpadAdd' },
             { code: 'F10', name_key: 'key_F10' },
         ],
-        DEFAULT_KEYBOARD_SHORTCUTS: { INCREMENT: 'ShiftRight', DECREMENT: 'ControlRight' }, 
+        DEFAULT_KEYBOARD_SHORTCUTS: { INCREMENT: 'None', DECREMENT: 'None' }, 
 
         DEFAULT_LANGUAGE: 'pl', 
         AVAILABLE_LANGUAGES: [{ code: 'pl', name: 'Polski' }, { code: 'en', name: 'English' }],
