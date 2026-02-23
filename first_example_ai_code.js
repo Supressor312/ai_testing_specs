@@ -311,6 +311,7 @@
             settingsPanelInteractionLock: false, 
             autoTriggerFoundOnLastScan: false, 
             lastFullStorageReadTime: 0, 
+            itemInProgress: false, 
         },
 
         mutationObserverInstance: null,
@@ -2064,11 +2065,19 @@
                 });
             }
 
+
+
+
+            if (/poniżej/i.test(pageTextContent)) {
+                state.uiStateFlags.itemInProgress = true;
+            }
+            
             if (CONFIG.AUTO_TRIGGER_REGEX.test(pageTextContent)) {
-                if (!state.uiStateFlags.autoTriggerFoundOnLastScan) {
-                    Utils.log('Auto-trigger DETECTED. Regex: ', CONFIG.AUTO_TRIGGER_REGEX.source);
+                if (state.uiStateFlags.itemInProgress && !state.uiStateFlags.autoTriggerFoundOnLastScan) {
+                    Utils.log('Auto-trigger DETECTED. DONE!');
                     EventHandler.Actions.incrementCurrentTabCounter(false);
                     state.uiStateFlags.autoTriggerFoundOnLastScan = true;
+                    state.uiStateFlags.itemInProgress = false;
                 }
             } else {
                 state.uiStateFlags.autoTriggerFoundOnLastScan = false;
