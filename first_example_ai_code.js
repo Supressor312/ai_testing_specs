@@ -86,7 +86,8 @@
         SYNC_INTERVAL_MS: 25000,
         SYNC_JITTER_MS: 5000,
         AUTO_RESET_MAX_AGE_HOURS: 14,
-
+        
+        PRE_TRIGGER_REGEX: /poniżej|видите ниже/i,
         AUTO_TRIGGER_REGEX: /Przypisz (nowy|ponownie)|канирование номера LP/i, 
         TRIGGER_OBSERVE_AREA_SELECTOR: 'body',
         DEFAULT_TRIGGER_MUTATION_DEBOUNCE_MS: 100, 
@@ -2068,13 +2069,13 @@
 
 
 
-            if (/poniżej|видите ниже/i.test(pageTextContent)) {
+            if (CONFIG.PRE_TRIGGER_REGEX.test(pageTextContent)) {
                 state.uiStateFlags.itemInProgress = true;
             }
             
             if (CONFIG.AUTO_TRIGGER_REGEX.test(pageTextContent)) {
                 if (state.uiStateFlags.itemInProgress && !state.uiStateFlags.autoTriggerFoundOnLastScan) {
-                    Utils.log('Auto-trigger DETECTED. DONE!');
+                    Utils.log('Auto-trigger DETECTED. DONE!рус_222');
                     EventHandler.Actions.incrementCurrentTabCounter(false);
                     state.uiStateFlags.autoTriggerFoundOnLastScan = true;
                     state.uiStateFlags.itemInProgress = false;
