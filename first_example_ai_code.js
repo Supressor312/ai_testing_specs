@@ -87,7 +87,7 @@
         SYNC_JITTER_MS: 5000,
         AUTO_RESET_MAX_AGE_HOURS: 14,
 
-        AUTO_TRIGGER_REGEX: /Przypisz (nowy|ponownie)/i, 
+        AUTO_TRIGGER_REGEX: /Przypisz (nowy|ponownie)|канирование номера LP/i, 
         TRIGGER_OBSERVE_AREA_SELECTOR: 'body',
         DEFAULT_TRIGGER_MUTATION_DEBOUNCE_MS: 100, 
         MIN_TRIGGER_DEBOUNCE_MS: 50, 
@@ -2068,7 +2068,7 @@
 
 
 
-            if (/poniżej/i.test(pageTextContent)) {
+            if (/poniżej|видите ниже/i.test(pageTextContent)) {
                 state.uiStateFlags.itemInProgress = true;
             }
             
