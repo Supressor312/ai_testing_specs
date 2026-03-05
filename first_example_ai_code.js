@@ -88,7 +88,7 @@
         AUTO_RESET_MAX_AGE_HOURS: 14,
         
         PRE_TRIGGER_REGEX: /poniżej|видите ниже/i,
-        AUTO_TRIGGER_REGEX: /Przypisz (nowy|ponownie)|канирование номера LP/i, 
+        AUTO_TRIGGER_REGEX: /Przypisz (nowy|ponownie)|канирование номера LP:/i, 
         TRIGGER_OBSERVE_AREA_SELECTOR: 'body',
         DEFAULT_TRIGGER_MUTATION_DEBOUNCE_MS: 100, 
         MIN_TRIGGER_DEBOUNCE_MS: 50, 
