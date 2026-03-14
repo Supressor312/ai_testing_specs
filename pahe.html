@@ -1,0 +1,343 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<link rel="shortcut icon" href="/resources/images/favicon.ico" />
+
+
+
+
+
+<title>App Launcher | openid</title>
+    
+
+
+
+
+
+
+<!-- only support standard mode now, handheld mode is using everything without "new" prefix -->
+
+    
+    
+        
+
+
+<link rel="stylesheet" href="/resources/css/new/menu-standard.css?vc31b5b95fb89ffd534553e7824a63ef7" />
+
+        
+
+
+<link rel="stylesheet" href="/resources/css/new/lighter.css?vc31b5b95fb89ffd534553e7824a63ef7" />
+
+        
+
+
+<link rel="stylesheet" href="/resources/css/oneg-ocons.css?vc31b5b95fb89ffd534553e7824a63ef7" />
+
+    
+
+
+</head>
+<body>
+    <div id="loginHeader">
+        <div id="aft-logo">
+            <img src="/resources/images/amazon-fulfillment-logo.png"
+                height="28" width="150"
+                atl="Amazon Fulfillment Technologies" />
+        </div>
+    </div>
+    
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+<div id="menu-container" class="">
+    <div id="menu-header" class="header-background">
+        <span class="menu-item" id="userMenuString" >menu użytkownika <!-- This space is important --><span class="shortcut-tip">u</span></span>
+        
+        <span class="menu-item">alyafrem</span>
+        
+        
+        
+        <div class="user-menu hidden">
+            <div class="choices single">
+                <ul>
+                    
+                        
+                        
+                            <li><a href="/logout">Wyloguj</a></li>
+                            <li><a href="/preferences">Wybierz język</a></li>
+                            
+                                <li><a href="/location">Wybierz lokalizację (LCJ4)</a></li>
+                                <li><a href="/do/speech?enabled=true">Turn ON speech</a></li>
+                            
+                            <li><a href="/do/darkMode">Turn ON dark mode</a></li>
+                            
+                            
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+    
+    
+    
+        
+        
+        
+            
+        
+        
+        
+        
+        
+    
+    
+
+    <div id="body" class="content">
+        <div class="login container">
+            
+                
+                    <div class="header">
+                        
+                            <div class="shortcut back">
+                                <span>b</span>
+                            </div>
+                        
+                        <h1 id="calmCodeGuidance">Zeskanuj kod pracy pośredniej</h1>
+                    </div>
+                    <div class="portrait calm-code">
+                        <img src="/resources/images/BadgeScan.png" height="224" width="223" />
+                    </div>
+                    <div class="footer">
+                        <form action="/do/laborTrackingKiosk" method="POST">
+                            <input type="hidden" name="warehouseId" value="LCJ4" />
+                            <input type="text" id="calmCode" name="calmCode" class=""
+                                   placeholder="Kod pracy pośredniej"
+                                   aria-describedby="calmCodeGuidance" autofocus />
+                        </form>
+                    </div>
+                
+                
+            
+        </div>
+    </div>
+
+    
+    
+
+    <div id="overlay" class="modal-overlay"></div>
+    <div id="problem-solver-modal"
+        class="container problem-solver hidden">
+        <div class="alert">
+            <h1>Skontaktuj się z pracownikiem rozwiązywania problemów</h1>
+        </div>
+        <div class="content">
+            <p>Skaner nie odczytał potrzebnych informacji. Skontaktuj się z pracownikiem rozwiązywania problemów.</p>
+        </div>
+        <div class="footer">
+            <button class="wide continue">
+                Kontynuuj<u>c</u>
+            </button>
+        </div>
+    </div>
+    <div id="kiva-connecting"
+        class="container problem-solver hidden">
+        <div class="footer">
+            <h1>Utracono połączenie z systemem Amazon Robotics. </br> Ponowne nawiązywanie połączenia, naciśnij przycisk ODŚWIEŻ, aby spróbować ponownie.</h1>
+        </div>
+        <div class="footer">
+            <img src="/resources/images/loading.gif" style="width: 50px; height: 50px">
+        </div>
+    </div>
+
+    <div id="kiva_login_loading">
+        <img src="/resources/images/loading.gif">
+    </div>
+
+    <div id="indirect-success" class="login success hidden">
+        <div class="header">
+            <h1>Rozpoczęto sesję</h1>
+        </div>
+        <div class="portrait calm-code">
+            <img src="/resources/images/BadgeScan.png" height="224"
+                width="223" />
+        </div>
+        <div class="footer">
+            <input type="text" name="calmCode" value=""
+                class="invisible"
+                placeholder="Kod pracy pośredniej" />
+        </div>
+    </div>
+    
+
+<script type="text/javascript" src="/resources/javascript/libs/jquery/1.11.2/jquery.min.js?vc31b5b95fb89ffd534553e7824a63ef7"></script>
+
+    
+
+<script type="text/javascript" src="/resources/javascript/libs/jquery/plugins/tiny-pubsub/0.7.0/tiny-pubsub.js?vc31b5b95fb89ffd534553e7824a63ef7"></script>
+
+    
+
+<script type="text/javascript" src="/resources/javascript/libs/jquery/plugins/cookie/1.0/jquery.cookie.min.js?vc31b5b95fb89ffd534553e7824a63ef7"></script>
+
+    
+    
+
+<script type="text/javascript" src="/resources/javascript/new/plugins/hotkeys.js?vc31b5b95fb89ffd534553e7824a63ef7"></script>
+
+    
+
+<script type="text/javascript" src="/resources/javascript/new/plugins/multilist.js?vc31b5b95fb89ffd534553e7824a63ef7"></script>
+
+    
+
+<script type="text/javascript" src="/resources/javascript/new/menu.js?vc31b5b95fb89ffd534553e7824a63ef7"></script>
+
+    
+
+<script type="text/javascript" src="/resources/javascript/new/Utils.js?vc31b5b95fb89ffd534553e7824a63ef7"></script>
+
+
+    <!-- https://accessibility.aft.amazon.dev/speechlibrary/dist/SpeechLibrary.umd.js -->
+    
+
+<script type="text/javascript" src="/resources/javascript/SpeechLibrary.umd.js?vc31b5b95fb89ffd534553e7824a63ef7"></script>
+
+
+    <!-- This file was obtained directly from Zac Rogerson (Sr. Dev on Alchemy team) -->
+    <!-- This is the latest 1.7.4 version with a fix included as there was a function that was 'undefined' -->
+    
+
+<script type="text/javascript" src="/resources/javascript/AlchemyAnalytics.es5.js?vc31b5b95fb89ffd534553e7824a63ef7"></script>
+
+
+    
+
+<script type="text/javascript" src="/resources/javascript/speechSupport.js?vc31b5b95fb89ffd534553e7824a63ef7"></script>
+
+
+
+    
+
+<script type="text/javascript" src="/resources/javascript/laborTrackingKiosk.js?vc31b5b95fb89ffd534553e7824a63ef7"></script>
+
+    
+
+
+<link rel="stylesheet" href="/resources/css/labortracking.css?vc31b5b95fb89ffd534553e7824a63ef7" />
+
+    
+    <script type="text/javascript">
+    (function($) {
+        APP_LAUNCHER_KEYSTROKE_DELAY = 500;
+        $.subscribe('/hotkey/back', function() {
+            
+                
+                    window.location = window.APP_LAUNCHER_MAIN;
+                
+                
+            
+        });
+
+        $('.login').center();
+    })(jQuery);
+
+    //Enabling speech
+    enableSpeech("pl_PL", Boolean(false));
+
+    </script>
+
+    <script type="text/javascript">
+        if ($.cookie('fcmenu-darkMode') === 'true') {
+            document.documentElement.style.filter = "invert(1)";
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
