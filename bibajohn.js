@@ -115,6 +115,8 @@
             {name: 'Sweeper', code: 'SCRFB11'},
             {name: 'Peer Trainer', code: 'SCRFB03'},
             {name: 'Szkolenie Teoretyczne', code: 'CRTRX'},
+            {name: 'WS_NONSORT', code: 'CRSDCNTF'},
+            {name: 'LIKWIDACJA', code: 'ICQAPSO'},
             ] }
         //{ title: 'Transfer Out Ship', roles: [ {name: 'TeamLeader', code: 'TOTOL'}, {name: 'ShippingClerk', code: 'SHPCL'}, {name: 'IndoorMarshal', code: 'OUTCRW'}, {name: 'Sortacja Likwidatorów', code: 'VRSORT'}, {name: 'PIT', code: 'MTTL'}, {name: 'ErgoPack', code: 'TOPACK'}, {name: 'SortacjaHazmaty', code: 'PSTOPS'} ] },
         //{ title: 'WHD', roles: [ {name: 'Team Lead', code: 'LPAWD'}, {name: 'WS', code: 'WHDWTSP'}, {name: 'Audyt', code: 'WDQA'}, {name: 'Sort', code: 'WDSORT'}, {name: 'Problem Solve', code: 'WDPS'}, {name: 'Telefony', code: 'WDGRADA'}, {name: 'Rutery', code: 'WDGRADC'}, {name: 'BMVD', code: 'BKGRD'}, {name: 'Memory items', code: 'DSKGRD'}, {name: 'Non Tech Grading', code: 'HLGRD'}, {name: 'TechGrading ID7', code: 'TECHGR'}, {name: 'Memory items DYSKI', code: 'WDREBX'}, {name: 'Drones', code: 'CEGRAD'}, {name: 'Cameras', code: 'CAMGRAD'}, {name: 'Audio', code: 'AUDGRAD'}, {name: 'PC components', code: 'PCACGRAD'}, {name: 'Consoles, Gaming Gear', code: 'GAMGRAD'} ] },
