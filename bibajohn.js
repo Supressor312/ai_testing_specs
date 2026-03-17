@@ -96,16 +96,31 @@
     `;
     document.head.appendChild(css);
 
+
+
+
+
+
+    
     // 3. База кодов
     const codes = [
-        { title: 'Customer Returns', roles: [ {name: 'Team Lead', code: 'LRTN'}, {name: 'Unloader', code: 'CRUNLD'}, {name: 'WS', code: 'CRSDCNTF'}, {name: 'Instructor', code: 'CRAMB'}, {name: '5s ', code: 'CR5S'}, {name: 'Speciality PS', code: 'SPPROJ1'}, {name: 'Apparel', code: 'SCRET09'}, {name: 'Speciality', code: 'SCRET03'}, {name: 'Virtual Remove', code: 'SCRET12'}, {name: 'Ekspresy', code: 'SCRFB04'}, {name: 'Unified Grading', code: 'SCRET10'}, {name: 'Ostre', code: 'SCRET02'}, {name: 'CRet sort TTS/TTA', code: 'CRSORT'}, {name: 'Process-guide Cret', code: 'PRGCRET'}, {name: 'Audyt Cret', code: 'CRAUDIT'} ] },
-        { title: 'Vendor Returns', roles: [ {name: 'Team Lead', code: 'LVRET'}, {name: 'Waterspider', code: 'VRWS'}, {name: 'Remove' , code: 'VRLQ'}, {name: 'ProblemSolve' , code: 'TRVPS'}, {name: 'INSTRUKTOR', code: 'VRAMB'}, {name: 'Donacja', code: 'ICQDMP'} ] },
-        { title: 'Transfer in Dock', roles: [ {name: 'Team Lead', code: 'LRTN'}, {name: 'Waterspider', code: 'CRSDCNTF'}, {name: 'Unloader', code: 'CRUNLD'}, {name: 'Dock Clerk', code: 'RSVDC'}, {name: 'Pit Operator', code: 'CRBPS'} ] },
-        { title: 'Transfer Out Ship', roles: [ {name: 'TeamLeader', code: 'TOTOL'}, {name: 'ShippingClerk', code: 'SHPCL'}, {name: 'IndoorMarshal', code: 'OUTCRW'}, {name: 'Sortacja Likwidatorów', code: 'VRSORT'}, {name: 'PIT', code: 'MTTL'}, {name: 'ErgoPack', code: 'TOPACK'}, {name: 'SortacjaHazmaty', code: 'PSTOPS'} ] },
-        { title: 'WHD', roles: [ {name: 'Team Lead', code: 'LPAWD'}, {name: 'WS', code: 'WHDWTSP'}, {name: 'Audyt', code: 'WDQA'}, {name: 'Sort', code: 'WDSORT'}, {name: 'Problem Solve', code: 'WDPS'}, {name: 'Telefony', code: 'WDGRADA'}, {name: 'Rutery', code: 'WDGRADC'}, {name: 'BMVD', code: 'BKGRD'}, {name: 'Memory items', code: 'DSKGRD'}, {name: 'Non Tech Grading', code: 'HLGRD'}, {name: 'TechGrading ID7', code: 'TECHGR'}, {name: 'Memory items DYSKI', code: 'WDREBX'}, {name: 'Drones', code: 'CEGRAD'}, {name: 'Cameras', code: 'CAMGRAD'}, {name: 'Audio', code: 'AUDGRAD'}, {name: 'PC components', code: 'PCACGRAD'}, {name: 'Consoles, Gaming Gear', code: 'GAMGRAD'} ] },
-        { title: 'Refurb', roles: [ {name: 'Process Guide ', code: 'PRGCRET'}, {name: 'Sweeper ', code: 'SCRFB10'}, {name: 'Water Spider ', code: 'CRSDCNTF'}, {name: 'Sort Tool (69)', code: 'SCRFB16'}, {name: 'Manual Sort', code: 'SPPROJI'}, {name: 'Ostre', code: 'SCRFB02 '}, {name: 'HeatGun', code: 'SCRFB08'}, {name: 'ShrinkWrap', code: 'SCRFB01'}, {name: 'REF', code: 'CRETREF'}, {name: 'HG&REF', code: 'SCRFB05 '}, {name: 'Peer Trainer', code: 'SCRFB03'}, {name: 'Apparells', code: 'SCRFB06'}, {name: 'Audyty ', code: 'SCRFB09'} ] },
-        { title: 'Speciality', roles: [ {name: 'Audio ', code: 'SCRFB13'}, {name: 'Rutery ', code: 'SCRFB17'}, {name: 'Telefony ', code: 'SCRFB11'}, {name: 'Kamery', code: 'SCRFB15'}, {name: 'SmartWach / GPS', code: 'SCRFB14'}, {name: 'Konsole ', code: 'SCRFB02'}, {name: 'Technicale', code: 'SCRFB12'} ] },
-        { title: 'HR/OTHER', roles: [ {name: 'ISTOP', code: 'ISTOP'}, {name: 'MSTOP', code: 'MSTOP'}, {name: 'SEV', code: 'SEV1_2'}, {name: 'RSG', code: 'STNASCSFTCOM'}, {name: 'KSR', code: 'STNFSITR'}, {name: 'ENGAGE', code: 'OPSEMPENG'}, {name: '1:1', code: 'OPSAAENG'}, {name: 'Dodatkowa przerва', code: 'HRACCOM'}, {name: 'Spotkania з HR', code: 'HRMISC'}, {name: 'Safety Ambassador', code: 'SFTASC'}, {name: 'Over Staffing', code: 'OVERSTA'}, {name: 'Urodziny', code: 'HRGROUP'}, {name: 'Engage', code: 'ENGAGE'} ] }
+        { title: 'Refurb', roles: [
+            {name: 'Team Lead', code: 'LRTN'},
+            {name: 'WS', code: 'TMWSP'},
+            {name: 'SURF', code: 'SCRFB01'},
+            {name: 'Czysty Refurb (bez WHD)', code: 'SCRFB05'},
+            {name: 'Technikale', code: 'SCRFB16'},
+            {name: 'HG', code: 'SCRFB07'},
+            {name: 'Shrink Wrap', code: 'CRETREF'},
+            {name: 'Sweeper', code: 'SCRFB11'},
+            {name: 'Peer Trainer', code: 'SCRFB03'},
+            {name: 'Szkolenie Teoretyczne', code: 'CRTRX'},
+            ] }
+        //{ title: 'Transfer Out Ship', roles: [ {name: 'TeamLeader', code: 'TOTOL'}, {name: 'ShippingClerk', code: 'SHPCL'}, {name: 'IndoorMarshal', code: 'OUTCRW'}, {name: 'Sortacja Likwidatorów', code: 'VRSORT'}, {name: 'PIT', code: 'MTTL'}, {name: 'ErgoPack', code: 'TOPACK'}, {name: 'SortacjaHazmaty', code: 'PSTOPS'} ] },
+        //{ title: 'WHD', roles: [ {name: 'Team Lead', code: 'LPAWD'}, {name: 'WS', code: 'WHDWTSP'}, {name: 'Audyt', code: 'WDQA'}, {name: 'Sort', code: 'WDSORT'}, {name: 'Problem Solve', code: 'WDPS'}, {name: 'Telefony', code: 'WDGRADA'}, {name: 'Rutery', code: 'WDGRADC'}, {name: 'BMVD', code: 'BKGRD'}, {name: 'Memory items', code: 'DSKGRD'}, {name: 'Non Tech Grading', code: 'HLGRD'}, {name: 'TechGrading ID7', code: 'TECHGR'}, {name: 'Memory items DYSKI', code: 'WDREBX'}, {name: 'Drones', code: 'CEGRAD'}, {name: 'Cameras', code: 'CAMGRAD'}, {name: 'Audio', code: 'AUDGRAD'}, {name: 'PC components', code: 'PCACGRAD'}, {name: 'Consoles, Gaming Gear', code: 'GAMGRAD'} ] },
+        //{ title: 'Refurb', roles: [ {name: 'Process Guide ', code: 'PRGCRET'}, {name: 'Sweeper ', code: 'SCRFB10'}, {name: 'Water Spider ', code: 'CRSDCNTF'}, {name: 'Sort Tool (69)', code: 'SCRFB16'}, {name: 'Manual Sort', code: 'SPPROJI'}, {name: 'Ostre', code: 'SCRFB02 '}, {name: 'HeatGun', code: 'SCRFB08'}, {name: 'ShrinkWrap', code: 'SCRFB01'}, {name: 'REF', code: 'CRETREF'}, {name: 'HG&REF', code: 'SCRFB05 '}, {name: 'Peer Trainer', code: 'SCRFB03'}, {name: 'Apparells', code: 'SCRFB06'}, {name: 'Audyty ', code: 'SCRFB09'} ] },
+        //{ title: 'Speciality', roles: [ {name: 'Audio ', code: 'SCRFB13'}, {name: 'Rutery ', code: 'SCRFB17'}, {name: 'Telefony ', code: 'SCRFB11'}, {name: 'Kamery', code: 'SCRFB15'}, {name: 'SmartWach / GPS', code: 'SCRFB14'}, {name: 'Konsole ', code: 'SCRFB02'}, {name: 'Technicale', code: 'SCRFB12'} ] },
+        //{ title: 'HR/OTHER', roles: [ {name: 'ISTOP', code: 'ISTOP'}, {name: 'MSTOP', code: 'MSTOP'}, {name: 'SEV', code: 'SEV1_2'}, {name: 'RSG', code: 'STNASCSFTCOM'}, {name: 'KSR', code: 'STNFSITR'}, {name: 'ENGAGE', code: 'OPSEMPENG'}, {name: '1:1', code: 'OPSAAENG'}, {name: 'Dodatkowa przerва', code: 'HRACCOM'}, {name: 'Spotkania з HR', code: 'HRMISC'}, {name: 'Safety Ambassador', code: 'SFTASC'}, {name: 'Over Staffing', code: 'OVERSTA'}, {name: 'Urodziny', code: 'HRGROUP'}, {name: 'Engage', code: 'ENGAGE'} ] }
     ];
 
     // 4. Поиск первого видимого инпута
