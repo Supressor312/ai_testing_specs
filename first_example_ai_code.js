@@ -2441,6 +2441,10 @@
             AutoTriggerManager.startObserver();
             StorageManager.scheduleSync();
 
+            setTimeout(() => StorageManager._performFullSyncRead(), 2000);
+           // setTimeout(() => StorageManager._performFullSyncRead(), 5000);
+           // setTimeout(() => StorageManager._performFullSyncRead(), 10000);
+
             window.addEventListener('beforeunload', EventHandler.Global.handleBeforeUnload);
             window.addEventListener('storage', EventHandler.Global.handleStorageChange);
             window.addEventListener('error', EventHandler.Global.handleGlobalError);
