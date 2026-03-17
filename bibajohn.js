@@ -14,9 +14,23 @@
         
         /* Анимация пульсации */
         @keyframes pulse-green {
-            0% { box-shadow: 0 0 6px rgba(50, 205, 50, 0.2); border-color: inherit; }
-            50% { box-shadow: 0 0 15px rgba(50, 205, 50, 0.9), 0 0 8px rgba(50, 205, 50, 0.5); border-color: #32cd32 !important; }
-            100% { box-shadow: 0 0 6px rgba(50, 205, 50, 0.2); border-color: inherit; }
+            0% { 
+                box-shadow: 0 0 2px rgba(50, 205, 50, 0.2), inset 0 0 2px rgba(50, 205, 50, 0.1); 
+                background-color: transparent; 
+                border-color: inherit; 
+            }
+            50% { 
+                /* Внешняя тень + Внутренняя тень (inset) */
+                box-shadow: 0 0 15px rgba(50, 205, 50, 0.9), inset 0 0 15px rgba(50, 205, 50, 0.6); 
+                /* Легкая зеленая заливка фона */
+                background-color: rgba(50, 205, 50, 0.15) !important; 
+                border-color: #32cd32 !important; 
+            }
+            100% { 
+                box-shadow: 0 0 2px rgba(50, 205, 50, 0.2), inset 0 0 2px rgba(50, 205, 50, 0.1); 
+                background-color: transparent; 
+                border-color: inherit; 
+            }
         }
 
         .latwe-target-input {
