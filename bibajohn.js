@@ -29,7 +29,7 @@
             align-content: center;
             justify-content: center;
             overflow-y: auto;
-            max-height: 90vh;
+            max-height: 100vh;
             padding-left: 20px;
         }
         #latwe-toolbox.hidden {
@@ -166,5 +166,5 @@
 
     }, 100);
 
-    console.log("Daemon ÅatweTaski запущен в фоне!");
+    console.log("Daemon LatweTaski works!");
 })();
