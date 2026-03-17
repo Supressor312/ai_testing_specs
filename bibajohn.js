@@ -27,7 +27,7 @@
             display: flex;
             flex-flow: column nowrap;
             align-content: center;
-            justify-content: center;
+            justify-content: top;
             overflow-y: auto;
             max-height: 100vh;
             padding-left: 20px;
@@ -63,7 +63,7 @@
             display: inline-flex;
             font-size: 14px;
             font-weight: 600;
-            justify-content: center;
+            justify-content: top;
             line-height: 1.15;
             min-height: 3rem;
             padding: 0 15px;
