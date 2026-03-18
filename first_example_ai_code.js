@@ -13,7 +13,7 @@
             monospace: 'Consolas, Monaco, Courier New, monospace',
             sans_serif_thin: 'Roboto, Helvetica Neue, Arial, sans-serif',
         },
-        DEFAULT_STATS_WINDOW_POSITION_VALUES: { top: '20px', left: 'calc(15% - 1px)' }, 
+        DEFAULT_STATS_WINDOW_POSITION_VALUES: { top: '0px', left: 'calc(15% - 1px)' }, 
 
         SETTINGS_PANEL_BACKGROUND_COLOR: 'rgba(245, 245, 245, 0.0)', 
         SETTINGS_PANEL_TEXT_COLOR: 'rgba(20, 20, 20, 0.98)',
@@ -40,7 +40,7 @@
             },
             pageOverlayOpacity: 0, 
             pageIndicatorTextVisible: false, 
-            statsWindowPosition: { top: '20px', left: 'calc(15% - 1px)' }, 
+            statsWindowPosition: { top: '0px', left: 'calc(15% - 1px)' }, 
             minStatsWindowFontSizePx: 10, 
             maxStatsWindowFontSizePx: 64, 
         },
