@@ -87,7 +87,7 @@
         SYNC_JITTER_MS: 5000,
         AUTO_RESET_MAX_AGE_HOURS: 14,
         
-        PRE_TRIGGER_REGEX: /poniżej|видите ниже/i,
+        PRE_TRIGGER_REGEX: /poniżej|видите ниже|Transparency/i,
         AUTO_TRIGGER_REGEX: /Przypisz (nowy|ponownie)|канирование номера LP:|Przedmiot wysłano do (?!PROBLEM-SOLVE\b).+/i, 
         TRIGGER_OBSERVE_AREA_SELECTOR: 'body',
         DEFAULT_TRIGGER_MUTATION_DEBOUNCE_MS: 100, 
