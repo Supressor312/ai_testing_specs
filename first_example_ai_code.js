@@ -7,7 +7,7 @@
         SCRIPT_ID_PREFIX: 'statsHelper_v7_7_7_', 
         DEBUG_MODE: false, 
 
-        UI_UPDATE_INTERVAL_MS: 1000,
+        UI_UPDATE_INTERVAL_MS: 8000,
         FONT_FAMILY_OPTIONS: {
             default: 'Segoe UI, Roboto, Arial, sans-serif',
             monospace: 'Consolas, Monaco, Courier New, monospace',
@@ -85,7 +85,7 @@
 
         SYNC_INTERVAL_MS: 25000,
         SYNC_JITTER_MS: 5000,
-        AUTO_RESET_MAX_AGE_HOURS: 14,
+        AUTO_RESET_MAX_AGE_HOURS: 11,
         
         PRE_TRIGGER_REGEX: /poniżej|видите ниже|Transparency/i,
         AUTO_TRIGGER_REGEX: /Przypisz (nowy|ponownie)|канирование номера LP:|Przedmiot wysłano do (?!PROBLEM-SOLVE\b).+/i, 
