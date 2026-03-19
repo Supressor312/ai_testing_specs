@@ -7,7 +7,7 @@
         SCRIPT_ID_PREFIX: 'statsHelper_v7_7_7_', 
         DEBUG_MODE: false, 
 
-        UI_UPDATE_INTERVAL_MS: 8000,
+        UI_UPDATE_INTERVAL_MS: 1000,
         FONT_FAMILY_OPTIONS: {
             default: 'Segoe UI, Roboto, Arial, sans-serif',
             monospace: 'Consolas, Monaco, Courier New, monospace',
