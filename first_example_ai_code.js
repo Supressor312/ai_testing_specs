@@ -15,18 +15,18 @@
         },
         DEFAULT_STATS_WINDOW_POSITION_VALUES: { top: '0px', left: 'calc(11% - 1px)' }, 
 
-        SETTINGS_PANEL_BACKGROUND_COLOR: 'rgba(245, 245, 245, 0.0)', 
+        SETTINGS_PANEL_BACKGROUND_COLOR: 'rgba(245, 245, 245, 0.9)', 
         SETTINGS_PANEL_TEXT_COLOR: 'rgba(20, 20, 20, 0.98)',
         SETTINGS_PANEL_ACCENT_COLOR: 'rgba(20, 20, 20, 0.4)', 
         SETTINGS_PANEL_INITIAL_WIDTH_PX: 450,
         SETTINGS_PANEL_MIN_WIDTH_PX: 380,
-        SETTINGS_PANEL_MAX_WIDTH_PX: 800,
+        SETTINGS_PANEL_MAX_WIDTH_PX: 1000,
         SETTINGS_PANEL_RESIZE_HANDLE_WIDTH_PX: 8,
         SETTINGS_PANEL_ACCESS_SEQUENCE: ['B', 'O', 'M', 'B', 'A'], 
 
         STATS_WINDOW_BACKGROUND_COLOR_DEFAULT: 'rgba(255, 255, 255, 0)', 
         STATS_WINDOW_BACKGROUND_COLOR_DRAGGING: 'rgba(230, 230, 230, 0)', 
-        STATS_WINDOW_TEXT_COLOR: 'rgba(10,10,10,0.95)', 
+        STATS_WINDOW_TEXT_COLOR: 'rgba(10,10,10,0.7)', 
 
         DEFAULT_LOCAL_TAB_CONFIG_VALUES: {
             statsWindowFontFamily: 'monospace', 
@@ -1338,13 +1338,13 @@
                     width: `${state.userConfig.settingsPanelWidth}px`, 
                     minWidth: `${CONFIG.SETTINGS_PANEL_MIN_WIDTH_PX}px`,
                     maxWidth: `${CONFIG.SETTINGS_PANEL_MAX_WIDTH_PX}px`,
-                    height: 'calc(100vh - 80px)', maxHeight: 'calc(100vh - 80px)',
+                    height: 'calc(100vh - 30px)', maxHeight: 'calc(100vh - 30px)',
                     boxSizing: 'border-box', padding: '15px',
                     paddingLeft: `${CONFIG.SETTINGS_PANEL_RESIZE_HANDLE_WIDTH_PX + 15}px`,
                     backgroundColor: CONFIG.SETTINGS_PANEL_BACKGROUND_COLOR,
                     color: CONFIG.SETTINGS_PANEL_TEXT_COLOR,
                     border: `1px solid ${CONFIG.SETTINGS_PANEL_ACCENT_COLOR}`,
-                    borderRadius: '8px', boxShadow: '0px 0px 10px rgba(0,0,0,0.1)', 
+                    borderRadius: '1px', boxShadow: '0px 0px 1px rgba(0,0,0,0.1)', 
                     zIndex: '2147483646', overflowY: 'auto', overflowX: 'hidden',
                     display: 'none', 
                     fontFamily: CONFIG.FONT_FAMILY_OPTIONS.default, fontSize: '14px',
@@ -1821,7 +1821,7 @@
             });
             state.domReferences.pageIndicator = Utils.createDOMElement('div', {
                 id: 'pageIndicator', style: {
-                    position: 'fixed', top: '50%', right: '75px', transform: 'translateY(-50%) rotate(90deg)',
+                    position: 'fixed', top: '50%', right: '100px', transform: 'translateY(-50%) rotate(90deg)',
                     transformOrigin: 'bottom right', fontSize: 'clamp(30px, 5vw, 60px)',
                     fontWeight: 'bold', zIndex: '2', pointerEvents: 'none',
                     userSelect: 'none', display: 'none',
