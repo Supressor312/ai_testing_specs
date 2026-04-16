@@ -13,7 +13,7 @@
             monospace: 'Consolas, Monaco, Courier New, monospace',
             sans_serif_thin: 'Roboto, Helvetica Neue, Arial, sans-serif',
         },
-        DEFAULT_STATS_WINDOW_POSITION_VALUES: { top: '0px', left: 'calc(11% - 1px)' }, 
+        DEFAULT_STATS_WINDOW_POSITION_VALUES: { top: '0px', left: 'calc(15% - 1px)' }, 
 
         SETTINGS_PANEL_BACKGROUND_COLOR: 'rgba(245, 245, 245, 0.9)', 
         SETTINGS_PANEL_TEXT_COLOR: 'rgba(20, 20, 20, 0.98)',
@@ -26,23 +26,23 @@
 
         STATS_WINDOW_BACKGROUND_COLOR_DEFAULT: 'rgba(255, 255, 255, 0)', 
         STATS_WINDOW_BACKGROUND_COLOR_DRAGGING: 'rgba(230, 230, 230, 0)', 
-        STATS_WINDOW_TEXT_COLOR: 'rgba(10,10,10,0.7)', 
+        STATS_WINDOW_TEXT_COLOR: 'rgba(128,128,128,0.65)', 
 
         DEFAULT_LOCAL_TAB_CONFIG_VALUES: {
             statsWindowFontFamily: 'monospace', 
-            statsWindowFontSize: 16,
+            statsWindowFontSize: 13,
             statsWindowLineVisibility: {
                 line1_currentTab: false,
                 line2_globalSummary: true, 
                 line3_shiftInfo: false,
                 line4_lunchInfo: false,
-                line5_realTimeClock: true,
+                line5_realTimeClock: false,
             },
             pageOverlayOpacity: 0, 
             pageIndicatorTextVisible: false, 
-            statsWindowPosition: { top: '0px', left: 'calc(11% - 1px)' }, 
-            minStatsWindowFontSizePx: 10, 
-            maxStatsWindowFontSizePx: 64, 
+            statsWindowPosition: { top: '0px', left: 'calc(15% - 1px)' }, 
+            minStatsWindowFontSizePx: 8, 
+            maxStatsWindowFontSizePx: 24, 
         },
 
         KNOWN_TAB_TYPES: {
