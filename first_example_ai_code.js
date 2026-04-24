@@ -26,11 +26,11 @@
 
         STATS_WINDOW_BACKGROUND_COLOR_DEFAULT: 'rgba(255, 255, 255, 0)', 
         STATS_WINDOW_BACKGROUND_COLOR_DRAGGING: 'rgba(230, 230, 230, 0)', 
-        STATS_WINDOW_TEXT_COLOR: 'rgba(0,0,0,0.5)', 
+        STATS_WINDOW_TEXT_COLOR: 'rgba(128,128,128,0.6)', 
 
         DEFAULT_LOCAL_TAB_CONFIG_VALUES: {
             statsWindowFontFamily: 'monospace', 
-            statsWindowFontSize: 13,
+            statsWindowFontSize: 14,
             statsWindowLineVisibility: {
                 line1_currentTab: false,
                 line2_globalSummary: true, 
@@ -46,8 +46,8 @@
         },
 
         KNOWN_TAB_TYPES: {
-            REFURB: { key: 'REFURB', displayNameKey: 'tabName_REFURB', color: 'rgba(255, 165, 0, ${opacity})', textColor: 'rgba(200, 100, 0, 0.2)', urlKeyword: 'REFURB' },
-            CRET: { key: 'CRET', displayNameKey: 'tabName_CRET', color: 'rgba(0, 120, 215, ${opacity})', textColor: 'rgba(0, 80, 150, 0.2)', urlKeyword: 'CRETURN' },
+            CRET: { key: 'CRET', displayNameKey: 'tabName_CRET', color: 'rgba(0, 120, 215, ${opacity})', textColor: 'rgba(0, 80, 150, 0.2)', urlKeyword: 'CRETURN' },            
+            REFURB: { key: 'REFURB', displayNameKey: 'tabName_REFURB', color: 'rgba(255, 165, 0, ${opacity})', textColor: 'rgba(200, 100, 0, 0.2)', urlKeyword: 'REFURB' },            
             WHD: { key: 'WHD', displayNameKey: 'tabName_WHD', color: 'rgba(30, 180, 30, ${opacity})', textColor: 'rgba(20, 120, 20, 0.2)', urlKeyword: 'DEALS' },
         },
         UNKNOWN_TAB_TYPE_KEY: 'UNKNOWN',
@@ -119,7 +119,7 @@
                 hoursShort: 'h', minutesShort: 'm', secondsShort: 's',
                 statsPerHourUnit: '/h', completedUnit: 'done', 
 
-                tabName_REFURB: 'REFURB', tabName_CRET: 'CRET', tabName_WHD: 'WHD', tabName_UNKNOWN: 'UNKNOWN',
+                tabName_CRET: 'CRET', tabName_REFURB: 'REFURB', tabName_WHD: 'WHD', tabName_UNKNOWN: 'UNKNOWN',
 
                 statsLine1_current: '${tabName} ${itemsPerHour}${statsPerHourUnit} (${count} ${completedUnit} ${inUnit} ${workTimeFormatted})',
 
@@ -197,7 +197,7 @@
                 hoursShort: 'g', minutesShort: 'm', secondsShort: 's',
                 statsPerHourUnit: '/h', completedUnit: 'zrobione',
 
-                tabName_REFURB: 'REFURB', tabName_CRET: 'CRET', tabName_WHD: 'WHD', tabName_UNKNOWN: 'NIEZNANA',
+                tabName_CRET: 'CRET', tabName_REFURB: 'REFURB', tabName_WHD: 'WHD', tabName_UNKNOWN: 'NIEZNANA',
 
                 statsLine1_current: '${tabName} ${itemsPerHour}${statsPerHourUnit} (${count} ${completedUnit} ${inUnit} ${workTimeFormatted})',
                 statsLine2_global_separator_new: ' ',
