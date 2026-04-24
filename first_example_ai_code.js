@@ -7,13 +7,13 @@
         SCRIPT_ID_PREFIX: 'statsHelper_v7_7_7_', 
         DEBUG_MODE: false, 
 
-        UI_UPDATE_INTERVAL_MS: 1000,
+        UI_UPDATE_INTERVAL_MS: 10000,
         FONT_FAMILY_OPTIONS: {
             default: 'Segoe UI, Roboto, Arial, sans-serif',
             monospace: 'Consolas, Monaco, Courier New, monospace',
             sans_serif_thin: 'Roboto, Helvetica Neue, Arial, sans-serif',
         },
-        DEFAULT_STATS_WINDOW_POSITION_VALUES: { top: '0px', left: 'calc(15% - 1px)' }, 
+        DEFAULT_STATS_WINDOW_POSITION_VALUES: { top: '0px', left: 'calc(17% - 1px)' }, 
 
         SETTINGS_PANEL_BACKGROUND_COLOR: 'rgba(245, 245, 245, 0.9)', 
         SETTINGS_PANEL_TEXT_COLOR: 'rgba(20, 20, 20, 0.98)',
@@ -26,7 +26,7 @@
 
         STATS_WINDOW_BACKGROUND_COLOR_DEFAULT: 'rgba(255, 255, 255, 0)', 
         STATS_WINDOW_BACKGROUND_COLOR_DRAGGING: 'rgba(230, 230, 230, 0)', 
-        STATS_WINDOW_TEXT_COLOR: 'rgba(128,128,128,0.65)', 
+        STATS_WINDOW_TEXT_COLOR: 'rgba(0,0,0,0.5)', 
 
         DEFAULT_LOCAL_TAB_CONFIG_VALUES: {
             statsWindowFontFamily: 'monospace', 
@@ -40,7 +40,7 @@
             },
             pageOverlayOpacity: 0, 
             pageIndicatorTextVisible: false, 
-            statsWindowPosition: { top: '0px', left: 'calc(15% - 1px)' }, 
+            statsWindowPosition: { top: '0px', left: 'calc(17% - 1px)' }, 
             minStatsWindowFontSizePx: 8, 
             maxStatsWindowFontSizePx: 24, 
         },
@@ -74,8 +74,8 @@
             { text_key: 'lunch_night3', start: '0020', end: '0050', type: 'night' },
             { text_key: 'lunch_night4', start: '0050', end: '0120', type: 'night' },
         ],
-        DEFAULT_LUNCH_INDEX_DAY: 0, 
-        DEFAULT_LUNCH_INDEX_NIGHT: 4, 
+        DEFAULT_LUNCH_INDEX_DAY: 3, 
+        DEFAULT_LUNCH_INDEX_NIGHT: 7, 
 
         STORAGE_KEY_USER_CONFIG: 'userConfig',
         STORAGE_KEY_SESSION_CONFIG: 'sessionConfig',
@@ -83,7 +83,7 @@
         STORAGE_PREFIX_TAB_COUNTER: 'counter_',
         SESSION_STORAGE_TAB_INSTANCE_ID_KEY: 'tabInstanceId', 
 
-        SYNC_INTERVAL_MS: 25000,
+        SYNC_INTERVAL_MS: 60000,
         SYNC_JITTER_MS: 5000,
         AUTO_RESET_MAX_AGE_HOURS: 11,
         
