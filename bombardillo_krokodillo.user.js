@@ -3,7 +3,7 @@
 // @namespace    bomba.stats.helper
 // @version      8.0.0
 // @description  Principal Engineered UserScript with Reactive State, EventBus, and CSS Variables
-// @match        *://*/*
+// @match        https://trex-prod-eu.aka.amazon.com/*
 // @run-at       document-end
 // @sandbox      raw
 // @connect      *
@@ -25,7 +25,7 @@
         SCRIPT_VERSION: '8.0.0',
         SCRIPT_NAME: 'Helper (Reactive)',
         SCRIPT_ID_PREFIX: 'statsHelper_v8_0_0_',
-        DEBUG_MODE: false,
+        DEBUG_MODE: true,
         UI_UPDATE_INTERVAL_MS: 1000,
         FONT_FAMILY_OPTIONS: {
             default: 'Segoe UI, Roboto, Arial, sans-serif',
@@ -41,8 +41,8 @@
         SETTINGS_PANEL_ACCESS_SEQUENCE:['B', 'O', 'M', 'B', 'A'],
         KNOWN_TAB_TYPES: {
             CRET: { key: 'CRET', displayNameKey: 'tabName_CRET', baseColorHex: '#0078D7', urlKeyword: 'CRETURN' },
-            REFURB: { key: 'REFURB', displayNameKey: 'tabName_REFURB', baseColorHex: '#FFA500', urlKeyword: 'REFURB' },
-            WHD: { key: 'WHD', displayNameKey: 'tabName_WHD', baseColorHex: '#1EB41E', urlKeyword: 'DEALS' },
+            REFURB: { key: 'REFURB', displayNameKey: 'tabName_REFURB', baseColorHex: '#FFA500', urlKeyword: 'CRETURN_REFURB' },
+            WHD: { key: 'WHD', displayNameKey: 'tabName_WHD', baseColorHex: '#1EB41E', urlKeyword: 'WAREHOUSE_DEALS' },
         },
         UNKNOWN_TAB_TYPE_KEY: 'UNKNOWN',
         DEFAULT_UNKNOWN_TAB_DETAILS: { key: 'UNKNOWN', displayNameKey: 'tabName_UNKNOWN', baseColorHex: '#808080' },
@@ -1058,9 +1058,33 @@
     // 8. BOOTSTRAP
     // ==========================================
     const Main = {
-        identifyTab() {
-            const url = window.location.href.toUpperCase();
-            const known = Object.values(CONFIG.KNOWN_TAB_TYPES).find(t => url.includes(t.urlKeyword));
+		identifyTab() {
+            const fullUrl = window.location.href.toUpperCase();
+            
+            // 1. Извлекаем параметр gradingMode регулярным выражением.
+            // Это обходит ограничения URLSearchParams, если параметры спрятаны за хэшем (SPA routing).
+            const match = fullUrl.match(/[?&#]GRADINGMODE=([^&#]*)/);
+            const gradingMode = match ? match[1] : null;
+
+            Utils.log(`[DIAGNOSTICS] Full URL: ${fullUrl}`);
+            Utils.log(`[DIAGNOSTICS] Extracted gradingMode: ${gradingMode}`);
+
+            let known;
+            if (gradingMode) {
+                // Точное совпадение
+                known = Object.values(CONFIG.KNOWN_TAB_TYPES).find(t => gradingMode === t.urlKeyword.toUpperCase());
+                Utils.log(`[DIAGNOSTICS] Strict match attempt result:`, known ? known.key : 'NOT_FOUND');
+            } 
+            
+            if (!known) {
+                // Фолбэк по подстроке. 
+                // КРИТИЧЕСКИ ВАЖНО: Сортируем ключи по длине по убыванию.
+                // Это гарантирует, что CRETURN_REFURB (14 символов) проверится ДО CRETURN (7 символов).
+                const sortedTypes = Object.values(CONFIG.KNOWN_TAB_TYPES).sort((a, b) => b.urlKeyword.length - a.urlKeyword.length);
+                known = sortedTypes.find(t => fullUrl.includes(t.urlKeyword.toUpperCase()));
+                Utils.log(`[DIAGNOSTICS] Fallback substring match result:`, known ? known.key : 'NOT_FOUND');
+            }
+
             if (known) {
                 store.currentTabType = known.key;
                 store.currentTabInstanceId = known.key;
@@ -1072,6 +1096,8 @@
                     store.userConfig.customTabSettings[store.currentTabInstanceId] = { displayName: `Tab (${store.currentTabInstanceId.substring(19, 23)})`, includeInGlobal: true };
                 }
             }
+            
+            Utils.log(`[DIAGNOSTICS] Final assigned tab type: ${store.currentTabType}`);
             store.sessionConfig.activeTabInstances[store.currentTabInstanceId] = Date.now();
         },
         init() {
